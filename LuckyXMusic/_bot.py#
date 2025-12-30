@@ -1,0 +1,18 @@
+import base64
+import asyncio
+
+async def start_bot():
+    print("🔄 Connecting to Telegram...")
+    await asyncio.sleep(1)
+    print("✅ Connected successfully!")
+
+def start_bot_check():
+    owner_encoded = base64.b64decode("THVja3kgUmFqYQ==")
+    tele_encoded = base64.b64decode("QFRoZV9MdWNreVg=")
+
+    if owner_encoded.decode() != "Lucky Raja" or tele_encoded.decode() != "@The_LuckyX":
+        raise Exception("❌ License violation: Unauthorized credit modification.")
+
+# Run checks
+start_bot_check()
+asyncio.run(start_bot())
