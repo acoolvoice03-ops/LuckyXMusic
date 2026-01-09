@@ -26,7 +26,6 @@ upvoters = {}
 from LuckyXMusic import app
 
 @app.on_callback_query(filters.regex("ADMIN") & ~BANNED_USERS)
-)
 @languageCB
 async def del_back_playlist(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
@@ -382,5 +381,6 @@ async def markup_timer():
 
 
 asyncio.create_task(markup_timer())
+
 
 
