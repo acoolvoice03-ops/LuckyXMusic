@@ -1,10 +1,10 @@
 import asyncio
-
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from LuckyXMusic import YouTube,  Lucky
-from LuckyXMusic.core.call import Lucky
+from LuckyXMusic import YouTube, app
+from LuckyXMusic.core.call import Lucky as Call
+
 from LuckyXMusic.misc import SUDOERS, db
 from LuckyXMusic.utils.database import (
     get_active_chats,
@@ -16,22 +16,6 @@ from LuckyXMusic.utils.database import (
     music_off,
     music_on,
     set_loop,
-)
-from LuckyXMusic.utils.decorators.language import languageCB
-from LuckyXMusic.utils.formatters import seconds_to_min
-from LuckyXMusic.utils.inline import close_markup, stream_markup, stream_markup_timer
-from LuckyXMusic.utils.stream.autoclear import auto_clean
-from LuckyXMusic.utils.thumbnails import get_thumb
-from config import (
-    BANNED_USERS,
-    SUPPORT_CHAT,
-    SOUNCLOUD_IMG_URL,
-    STREAM_IMG_URL,
-    TELEGRAM_AUDIO_URL,
-    TELEGRAM_VIDEO_URL,
-    adminlist,
-    confirmer,
-    votemode,
 )
 from strings import get_string
 
@@ -398,4 +382,5 @@ async def markup_timer():
 
 
 asyncio.create_task(markup_timer())
+
 
